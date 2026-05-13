@@ -3,11 +3,12 @@
     {
       "name": "windows-gcc-x64",
       "includePath": [
-        "${workspaceFolder}/**"
+        "${workspaceFolder}/**",
+        "C:/vcpkg/installed/x64-mingw-dynamic/include"
       ],
-      "compilerPath": "C:/Program Files (x86)/mingw64/bin/gcc.exe",
+      "compilerPath": "C:/Program Files (x86)/mingw64/bin/g++.exe",
       "cStandard": "${default}",
-      "cppStandard": "${default}",
+      "cppStandard": "c++17",
       "intelliSenseMode": "windows-gcc-x64",
       "compilerArgs": [
         ""

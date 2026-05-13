@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build opengl",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "Test.cpp",
+                "-o",
+                "Test",
+                "-IC:/vcpkg/installed/x64-mingw-dynamic/include",
+                "-LC:/vcpkg/installed/x64-mingw-dynamic/lib",
+                "-lglfw3",
+                "-lglad",
+                "-lopengl32",
+                "-lgdi32",
+                "-luser32",
+                "-lkernel32",
+                "-lwinmm",
+                "-lws2_32"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "run opengl",
+            "type": "shell",
+            "command": ".\\Test.exe",
+            "dependsOn": [
+                "build opengl"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "C:/vcpkg/installed/x64-mingw-dynamic/bin;${env:PATH}"
+                }
+            },
+            "problemMatcher": []
+        }
+    ]
+}
