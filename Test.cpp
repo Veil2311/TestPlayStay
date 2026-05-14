@@ -24,6 +24,11 @@ private:
 	int id_ = 0;
 };
 
+int calculateSum(const Greeter& greeter, int a) {
+	std::cout << "Hello, " << greeter.id << "!" << std::endl;
+	return a;
+}
+
 int main() {
 	Greeter greeter("C++", 42);
 	greeter.Greet();
