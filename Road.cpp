@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <vector>
 
 class Road {
@@ -36,8 +37,17 @@ private:
 	float width_ = 1.0f;
 	std::vector<float> vertices_;
 };
-int main(){
-    Road r(10.0f, 2.0f);
-    SetSize(r);
+int main() {
+	Road r(10.0f, 2.0f);
+	r.BuildFlatMesh();
 
+	r.SetSize(12.0f, 3.0f);
+	r.BuildFlatMesh();
+
+	const auto& vertices = r.GetVertices();
+	std::printf("vertices count: %zu\n", vertices.size());
+	for (float v : vertices) {
+		std::printf("%f\n", v);
+	}
+	return 0;
 }
